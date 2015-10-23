@@ -1,71 +1,48 @@
 require "rubygems"
 require "bundler/setup"
 
+git_repo       = "git@github.com:crcastle/ctrl.industries.git"
 deploy_default = "push"
 deploy_branch  = "gh-pages"
+public_dir      = "_site"       # compiled site directory
+source_dir      = "."           # source file directory
+deploy_dir      = "_deploy"     # deploy directory (for Github pages deployment)
 
-## -- Misc Configs -- ##
-
-public_dir      = "public"    # compiled site directory
-source_dir      = "source"    # source file directory
-blog_index_dir  = 'source'    # directory for your blog's index page (if you put your index in source/blog/index.html, set this to 'source/blog')
-deploy_dir      = "_deploy"   # deploy directory (for Github pages deployment)
-stash_dir       = "_stash"    # directory to stash posts for speedy generation
-posts_dir       = "_posts"    # directory for blog files
-themes_dir      = ".themes"   # directory for blog files
-new_post_ext    = "markdown"  # default new post file extension when using the new_post task
-new_page_ext    = "markdown"  # default new page file extension when using the new_page task
-server_port     = "4000"      # port for preview server eg. localhost:4000
+deploy_path     = "#{ENV['TMPDIR']}#{deploy_dir}"
 
 desc "Generate jekyll site"
 task :generate do
   # raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
   puts "## Generating Site with Jekyll"
   # system "compass compile --css-dir #{source_dir}/stylesheets"
-  system "bin/jekyll build --source . --destination _site"
-end
-
-desc "Default deploy task"
-task :deploy do
-  # Check if preview posts exist, which should not be published
-  if File.exists?(".preview-mode")
-    puts "## Found posts in preview mode, regenerating files ..."
-    File.delete(".preview-mode")
-    Rake::Task[:generate].execute
-  end
-
-  Rake::Task[:copydot].invoke(source_dir, public_dir)
-  Rake::Task["#{deploy_default}"].execute
+  system "bin/jekyll build --source #{source_dir} --destination #{public_dir}"
 end
 
 desc "Generate website and deploy"
 task :gen_deploy => [:generate, :deploy] do
 end
 
-desc "copy dot files for deployment"
-task :copydot, :source, :dest do |t, args|
-  FileList["#{args.source}/**/.*"].exclude("**/.", "**/..", "**/.DS_Store", "**/._*").each do |file|
-    cp_r file, file.gsub(/#{args.source}/, "#{args.dest}") unless File.directory?(file)
-  end
-end
-
 desc "deploy public directory to github pages"
-multitask :push do
+multitask :deploy do
   puts "## Deploying branch to Github Pages "
-  puts "## Pulling any updates from Github Pages "
-  cd "#{deploy_dir}" do
-    Bundler.with_clean_env { system "git pull" }
+  puts "## Cloning current Github Pages repo "
+  rm_rf "#{deploy_path}"
+  mkdir_p "#{deploy_path}"
+  cd "#{deploy_path}" do
+    Bundler.with_clean_env do
+      system "git clone #{git_repo} jekyll-deploy"
+    end
   end
-  (Dir["#{deploy_dir}/*"]).each { |f| rm_rf(f) }
-  Rake::Task[:copydot].invoke(public_dir, deploy_dir)
-  puts "\n## Copying #{public_dir} to #{deploy_dir}"
-  cp_r "#{public_dir}/.", deploy_dir
-  cd "#{deploy_dir}" do
+  puts "\n## Copying #{public_dir} to #{deploy_path}"
+  cd "#{deploy_path}/jekyll-deploy" do
+    system "git checkout #{deploy_branch}"
+    cp_r "#{Rake.application.original_dir}/#{public_dir}/.", "."
     system "git add -A"
-    message = "Site updated at #{Time.now.utc}"
+    host = system("scutil --get LocalHostName")
+    message = "Site updated at #{Time.now.utc} from #{host}"
     puts "\n## Committing: #{message}"
     system "git commit -m \"#{message}\""
-    puts "\n## Pushing generated #{deploy_dir} website"
+    puts "\n## Pushing generated #{deploy_path} website"
     Bundler.with_clean_env { system "git push origin #{deploy_branch}" }
     puts "\n## Github Pages deploy complete"
   end
