@@ -2,7 +2,6 @@ require "rubygems"
 require "bundler/setup"
 
 git_repo       = "git@github.com:crcastle/ctrl.industries.git"
-deploy_default = "push"
 deploy_branch  = "gh-pages"
 public_dir      = "_site"       # compiled site directory
 source_dir      = "."           # source file directory
@@ -22,7 +21,7 @@ desc "Generate website and deploy"
 task :gen_deploy => [:generate, :deploy] do
 end
 
-desc "deploy public directory to github pages"
+desc "Deploy public directory to github pages"
 multitask :deploy do
   puts "## Deploying branch to Github Pages "
   puts "## Cloning current Github Pages repo "
@@ -33,12 +32,12 @@ multitask :deploy do
       system "git clone #{git_repo} jekyll-deploy"
     end
   end
-  puts "\n## Copying #{public_dir} to #{deploy_path}"
+  puts "\n## Copying #{public_dir} to #{deploy_path}/jekyll-deploy"
   cd "#{deploy_path}/jekyll-deploy" do
     system "git checkout #{deploy_branch}"
     cp_r "#{Rake.application.original_dir}/#{public_dir}/.", "."
     system "git add -A"
-    host = system("scutil --get LocalHostName")
+    host = `scutil --get LocalHostName`
     message = "Site updated at #{Time.now.utc} from #{host}"
     puts "\n## Committing: #{message}"
     system "git commit -m \"#{message}\""
