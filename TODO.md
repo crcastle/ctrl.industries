@@ -1,7 +1,7 @@
 - [ ] Take picture of breadboard for circle image (really close view of breadboard)
 - [ ] Take picture of v1 purple PCB for circle images (really close view, clean white background)
 - [ ] Take picture of enclosure with PCB installed, batteries connected, and camera connected
-- [ ] Take striaght down picture of workbench with orderly tools
+- [ ] Take straight down picture of workbench with orderly tools
 
 - [ ] Initial full-screen image: replace with ordered picture of electronics tools on workbench
 - Timeline
@@ -11,14 +11,14 @@
   - [ ] Field-Testable Prototype picture: image of enclosure with PCB installed, batteries connected, and camera connected
   - [x] Field-Testable Prototype text: finish
 
-- [ ] Figure out how to build so it shows up at crc.io/ctrl and ctrl.industries
-- [ ] Push to crcastle.github.io github pages
-- [ ] Test updated crcastle.github.io site
+- [x] Figure out how to build so it shows up at crc.io/ctrl and ctrl.industries
+- [x] Push to crcastle.github.io github pages
+- [x] Test updated crc.io site
 - [ ] Send to Scotty for feedback
-- [ ] Push to ctrl.industries github pages
-- [ ] Test updated ctrl.industries site
+- [x] Push to ctrl.industries github pages
+- [x] Test updated ctrl.industries site
 - Update resume
   - [ ] Add ctrl industries to resume
   - [ ] Review and (if necessary) update Simply Measured resume section
-  - [ ] Push changes to crc.io github pages
   - [ ] Verify resume still fits on one printed page, edit to fit
+  - [ ] Push changes to crc.io github pages

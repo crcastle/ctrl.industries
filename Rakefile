@@ -43,6 +43,8 @@ multitask :deploy do
     system "git commit -m \"#{message}\""
     puts "\n## Pushing generated #{deploy_path} website"
     Bundler.with_clean_env { system "git push origin #{deploy_branch}" }
-    puts "\n## Github Pages deploy complete"
+    puts "\n## Github Pages deploy complete, cleaning up "
   end
+  rm_rf "#{deploy_path}"
+  puts "\n## Done. "
 end

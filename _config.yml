@@ -64,6 +64,6 @@ modals:
 # Build settings
 markdown: kramdown
 permalink: pretty
-exclude: [vendor]
+exclude: [vendor, bin, fonts, Gemfile, Gemfile.lock, LICENSE, Rakefile, README.md, TODO.md]
 kramdown:
   parse_block_html: true
