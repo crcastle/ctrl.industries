@@ -35,14 +35,14 @@ multitask :deploy do
     system "git checkout #{deploy_branch}"
     cp_r "#{Rake.application.original_dir}/#{public_dir}/.", "."
     system "git add -A"
-    host = `scutil --get LocalHostName`
-    message = "Site updated at #{Time.now.utc} from #{host}"
+    message = "Site updated at #{Time.now.utc} from #{`hostname`}"
     puts "\n## Committing: #{message}"
     system "git commit -m \"#{message}\""
     puts "\n## Pushing generated #{deploy_path} website"
-    Bundler.with_clean_env { system "git push origin #{deploy_branch}" }
+    system "git push origin #{deploy_branch}"
     puts "\n## Github Pages deploy complete, cleaning up "
   end
+  puts "## Deleting temporary deploy diretory "
   rm_rf "#{deploy_path}"
   puts "\n## Done "
 end
