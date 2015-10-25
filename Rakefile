@@ -1,19 +1,17 @@
 require "rubygems"
 require "bundler/setup"
 
-git_repo       = "git@github.com:crcastle/ctrl.industries.git"
-deploy_branch  = "gh-pages"
-public_dir      = "_site"       # compiled site directory
-source_dir      = "."           # source file directory
+git_repo        = "git@github.com:crcastle/ctrl.industries.git"
+deploy_branch   = "gh-pages"
+public_dir      = "_site"       # jekyll compiled site directory
+source_dir      = "."           # jekyll source file directory
 deploy_dir      = "_deploy"     # deploy directory (for Github pages deployment)
 
 deploy_path     = "#{ENV['TMPDIR']}#{deploy_dir}"
 
 desc "Generate jekyll site"
 task :generate do
-  # raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
   puts "## Generating Site with Jekyll"
-  # system "compass compile --css-dir #{source_dir}/stylesheets"
   system "bin/jekyll build --source #{source_dir} --destination #{public_dir}"
 end
 
@@ -46,5 +44,5 @@ multitask :deploy do
     puts "\n## Github Pages deploy complete, cleaning up "
   end
   rm_rf "#{deploy_path}"
-  puts "\n## Done. "
+  puts "\n## Done "
 end
