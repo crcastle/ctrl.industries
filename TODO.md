@@ -1,20 +1,20 @@
-- [ ] Take picture of breadboard for circle image (really close view of breadboard)
-- [ ] Take picture of v1 purple PCB for circle images (really close view, clean white background)
+- [x] Take picture of breadboard for circle image (really close view of breadboard)
+- [x] Take picture of v1 purple PCB for circle images (really close view, clean white background)
 - [ ] Take picture of enclosure with PCB installed, batteries connected, and camera connected
-- [ ] Take straight down picture of workbench with orderly tools
+- [x] Take straight down picture of workbench with orderly tools
 
-- [ ] Initial full-screen image: replace with ordered picture of electronics tools on workbench
+- [x] Initial full-screen image: replace with ordered picture of electronics tools on workbench
 - Timeline
-  - [ ] Proof-of-Concept picture: image of working breadboard proof-of-concept
+  - [x] Proof-of-Concept picture: image of working breadboard proof-of-concept
   - [x] Computer Vision picture: screenshot of CV showing gauge angle
-  - [ ] PCB Iteration picture: image of v1 purple PCB
+  - [x] PCB Iteration picture: image of v1 purple PCB
   - [ ] Field-Testable Prototype picture: image of enclosure with PCB installed, batteries connected, and camera connected
   - [x] Field-Testable Prototype text: finish
 
 - [x] Figure out how to build so it shows up at crc.io/ctrl and ctrl.industries
 - [x] Push to crcastle.github.io github pages
 - [x] Test updated crc.io site
-- [ ] Send to Scotty for feedback
+- [x] Send to Scotty for feedback
 - [x] Push to ctrl.industries github pages
 - [x] Test updated ctrl.industries site
 - Update resume
