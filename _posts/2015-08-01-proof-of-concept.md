@@ -1,6 +1,6 @@
 ---
 title: Proof-of-Concept
-image:
+image: img/timeline/breadboard.jpg
 notes: show pic of breadboard.  or power calculation spreadsheet?
 ---
 *Requirement Definition ➜ System Architecture ➜ Proof-of-Concept ➜ Financial Modeling ➜ Project Plan*\\
