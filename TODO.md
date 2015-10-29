@@ -17,6 +17,7 @@
 - [x] Send to Scotty for feedback
 - [x] Push to ctrl.industries github pages
 - [x] Test updated ctrl.industries site
+- [ ] Review Scotty's feedback
 - Update resume
   - [ ] Add ctrl industries to resume
   - [ ] Review and (if necessary) update Simply Measured resume section
