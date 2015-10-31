@@ -19,7 +19,7 @@
 - [x] Test updated ctrl.industries site
 - [ ] Review Scotty's feedback
 - Update resume
-  - [ ] Add ctrl industries to resume
-  - [ ] Review and (if necessary) update Simply Measured resume section
-  - [ ] Verify resume still fits on one printed page, edit to fit
-  - [ ] Push changes to crc.io github pages
+  - [x] Add ctrl industries to resume
+  - [x] Review and (if necessary) update Simply Measured resume section
+  - [x] Verify resume still fits on one printed page, edit to fit
+  - [x] Push changes to crc.io github pages
