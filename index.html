@@ -17,6 +17,17 @@
     <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
     <link href='//fonts.googleapis.com/css?family=Bitter:400,700|Libre+Baskerville|Fauna+One|Coustard|Podkova|Slabo+27px|Montserrat:400,700|Kaushan+Script|Lato:400,700,400italic,700italic|Droid+Serif:400,700,400italic,700italic|Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
+    <!-- Begin Inspectlet Embed Code -->
+    <script type="text/javascript" id="inspectletjs">
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 744842266]);
+    (function() {
+    function ldinsp(){if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
+    setTimeout(ldinsp, 500); document.readyState != "complete" ? (window.attachEvent ? window.attachEvent('onload', ldinsp) : window.addEventListener('load', ldinsp, false)) : ldinsp();
+    })();
+    </script>
+    <!-- End Inspectlet Embed Code -->
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -138,11 +149,11 @@
                                 <div class="timeline-body text-muted">
                                     <p><em>Bring combined sensor and SaaS technology to industries that have been slow to benefit from the rapid pace of technology innovation over the past decade.</em><br />
 <br />
-“Analog” industries such as Agriculture, Forestry, Fishing, Construction, Trucking, Manufacturing, Oil and Gas, and many others have not benefited from technological innovation as much as information-based and service-based industries. These “analog” industries require physical hardware to interface with the software world. But hardware development is expensive, complex, and iteration takes too long compared to software development.<br />
+“Analog” industries such as Agriculture, Forestry, Fishing, Construction, Trucking, Manufacturing, Oil and Gas, and many others are yet to fully benefit from technological innovation in the way that information-based and service-based industries have. These “analog” industries require physical hardware to interface with the software world. But hardware development is expensive, complex, and iteration takes too long compared to software development.<br />
 <br />
-But now hardware development is changing. Prototyping cycles have shortened, electronic components can be ordered in small quantities quickly and cost effectively, and there has been a surge in simple-to-program microcontrollers. The production cost for a simple wireless sensor device can be less than $25, and hardware development time can be reduced from a year to months or even weeks! The plethora of Internet-of-Things consumer devices is one result of these changes (<a href="#modal2" data-toggle="modal">fitness trackers, wifi-connected light bulbs, smart refrigerators</a>). However the path to profit for Internet-of-Things consumer devices is not very clear. Are people really willing to pay a monthly service fee for their refrigerator? Or install a new phone app for every device in their house?<br />
+But now hardware development is changing. Prototyping cycles have shortened, electronic components can be ordered in small quantities quickly and cost effectively, and there has been a surge in simple-to-program microcontrollers. The production cost for a simple wireless sensor device can be less than $25, and hardware development time can be reduced from a year to months or even weeks! The plethora of Internet-of-Things consumer devices is one result of these changes (<a href="#modal2" data-toggle="modal">fitness trackers, wifi-connected light bulbs, smart refrigerators</a>). However the path to profit for Internet-of-Things consumer devices is not very clear. Are people really willing to pay a monthly service fee to monitor their refrigerator? Or install a new phone app for every device in their house?<br />
 <br />
-On the other hand, there is a clear value proposition for Internet-of-Things innovations for businesses, and more specifically, “analog” businesses.  Internet-of-Things devices and services can help them respond to customer service problems faster, mitigate business risks, reduce labor expenses, reduce energy expenses, improve coordination with suppliers, improve understanding of equipment health. The list goes on and on.</p>
+On the other hand, there is a clear value proposition for Internet-of-Things innovations for businesses, and more specifically, “analog” businesses.  Internet-of-Things devices and services can help them respond to customer service problems faster, mitigate business risks, reduce labor expenses, reduce energy expenses, improve coordination with suppliers, and improve understanding of equipment health. The list goes on and on.</p>
 
                                 </div>
                             </div>
@@ -157,7 +168,7 @@ On the other hand, there is a clear value proposition for Internet-of-Things inn
                                     <h4 class="subheading">Propane Gauge Reader</h4>
                                 </div>
                                 <div class="timeline-body text-muted">
-                                    <p><em>Analog gauge reader for residential and commercial heating and hot water propane tanks. While products exist in this market, they are expensive, slow to setup, overly complex, and aren’t updated frequently in response to customer feedback – great market conditions to attack!</em><br />
+                                    <p><em>Analog gauge reader for residential and commercial heating and hot water propane tanks. While products exist in this market, they are expensive, slow to setup, overly complex, and aren’t updated frequently in response to customer feedback – a perfect market conditions to disrupt!</em><br />
 <br />
 A friend’s family member asked “Why isn’t there a way for me to know the real-time level of my customers’ tanks? It seems like this should be easy to solve.” He runs a propane distribution company and has to put a driver in a delivery truck to check and, if low, fill-up customer tanks. And while he has software to estimate customer tank levels based on historical consumption and weather, the software requires accurate data-entry and cannot account for unexpected changes in consumption from visiting guests, vacations, kids going off to college, babies being born, interior renovations, etc.<br />
 <br />
@@ -315,7 +326,7 @@ For each of these components, variables such as price, physical size, voltage an
 <br />
 Computer Vision allows a computer to understand information about the physical world – or in my case, allows a computer to read <a href="#modal4" data-toggle="modal">various</a> <a href="#modal5" data-toggle="modal">types</a> <a href="#modal6" data-toggle="modal">of</a> <a href="#modal7" data-toggle="modal">analog</a> <a href="#modal8" data-toggle="modal">gauges</a>.<br />
 <br />
-Just like electronic hardware design and production, Computer Vision was an area about which I knew very little.  After reviewing multiple academic papers on using Computer Vision with analog gauges, I began using Python and <a href="http://opencv.org">OpenCV</a> to design an algorithm that could quickly and accurately read the image of an analog gauge.<br />
+Just like electronic hardware design and production, Computer Vision was an area about which I knew very little.  After reviewing multiple academic papers<sup><a href="http://www.hindawi.com/journals/mpe/2015/283629/">1</a>, <a href="http://www.imeko.org/publications/tc4-2008/IMEKO-TC4-2008-122.pdf">2</a>, <a href="http://www.asee.org/documents/zones/zone1/2014/Student/PDFs/116.pdf">3</a>, <a href="http://www.jcomputers.us/vol9/jcp0904-01.pdf">4</a></sup> on using Computer Vision with analog gauges, I began using Python and <a href="http://opencv.org">OpenCV</a> to design an algorithm that could quickly and accurately read the image of an analog gauge.<br />
 <br />
 Within three weeks I had an algorithm that could read many analog gauges in addition to a web-based tuning <abbr class="initialism" title="User Interface">UI</abbr> so that the system could quickly be adapted to new gauge faces. Pretty awesome to see the messy physical world translated to the binary world.</p>
 
@@ -371,9 +382,36 @@ Beyond the basic functionality, I needed to ensure the hardware would stand up t
                                     <h4 class="subheading">Does this sound interesting?</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted"><em>Before I continue investing my time and money in developing this business I want a partner to help with business development, sales channel definition, strategic partnerships, and signing customers.</em></p>
-                                    <br><p class="text-muted">If you're interested, <a class="page-scroll" href="#team">get in touch</a>!</p>
+                                    <p class="text-muted">
+                                      <em>
+                                        Because I need your help!
+                                      </em>
+                                      <br><br>
+                                      I've answered a lot of questions, but&nbsp;
+                                      there are many more: what is the right sales channel mix,&nbsp;
+                                      do I charge for hardware or just for a service contract,&nbsp;
+                                      what is the customer support model, and&nbsp;
+                                      what is the minimum capital investment needed to scale,&nbsp;
+                                      among many others.
+                                      <br><br>
+                                      I need a partner with the energy, interest, and skills to help me transform these
+                                      ideas and my experience into a profitable business. If you're interested, <a class="page-scroll" href="#team">get in touch</a>!
+                                    </p>
                                 </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-image">
+                              <h4 class="circle-text">
+                                <a class="page-scroll" href="#team">
+                                    ctrl
+                                    <br>industries
+                                </a>
+                              </h4>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading"></div>
+                                <div class="timeline-body"></div>
                             </div>
                         </li>
                     </ul>
@@ -565,6 +603,18 @@ Beyond the basic functionality, I needed to ensure the hardware would stand up t
 
     <!-- Custom Theme JavaScript -->
     <script src="/js/agency.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-63309122-3', 'auto');
+      ga('require', 'linkid', 'linkid.js');
+      ga('require', 'displayfeatures');
+      ga('send', 'pageview');
+
+    </script>
 
 
     </body>
